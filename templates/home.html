@@ -1,0 +1,69 @@
+<div ng-include="'templates/nav.html'"></div>
+
+
+<main class="container">
+    <div class="row">
+        <input type="text" ng-model="busca" placeholder="Busca">
+    </div>
+
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Nota1</th>
+                <th>Nota2</th>
+                <th>Nota3</th>
+                <th>Média</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="aluno in alunos | filter:busca">
+                <td>{{aluno.nome}}</td>
+                <td>{{aluno.email}}</td>
+                <td>{{aluno.nota1}}</td>
+                <td>{{aluno.nota2}}</td>
+                <td>{{aluno.nota3}}</td>
+                <td>{{aluno.media}}</td>
+            </tr>
+        </tbody>
+    </table>
+<hr>
+
+<h4>Adicionar</h4>
+
+        <div class="row">
+            <form class="col s12">
+              <div class="row">
+
+                <div class="input-field col m6 s6">
+                  <input type="text" class="validate" ng-model="Aluno.nome">
+                  <label for="nome">Nome</label>
+                </div>
+
+                <div class="input-field col m6 s6">
+                  <input type="email" class="validate" ng-model="Aluno.email">
+                  <label for="nome">E-mail</label>
+                </div>
+
+                <div class="input-field col m6 s6">
+                  <input type="text" class="validate" ng-model="Aluno.nota1">
+                  <label for="nome">Nota 1</label>
+                </div>
+
+                <div class="input-field col m6 s6">
+                  <input type="text" class="validate" ng-model="Aluno.nota2">
+                  <label for="nome">Nota 1</label>
+                </div>
+
+                <div class="input-field col m6 s6">
+                  <input type="text" class="validate" ng-model="Aluno.nota3">
+                  <label for="nome">Nota 1</label>
+                </div>
+
+            </form>
+          </div>
+
+          <a class="waves-effect waves-light btn" ng-click="addAluno(Aluno)">button</a>
+</main>
